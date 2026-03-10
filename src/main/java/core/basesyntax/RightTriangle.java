@@ -1,11 +1,16 @@
 package core.basesyntax;
 
-public class RightTriangle extends Figure {
-    public int side;
+public class RightTriangle extends Figure implements Drawable {
+    private int side;
 
-    public RightTriangle(int side, Color color, double area, String name) {
-        super(color, area, name);
+    public RightTriangle(int side, String color) {
+        super(color, (Math.sqrt(3) / 4) * Math.pow(side, 2), "Right triangle");
         this.side = side;
+    }
+
+    public void draw() {
+        System.out.println("Figure: " + getName() + ", area: " + getArea() + " sq. units, side: " + getSide() 
+        + " units, color: " + getColor());
     }
 
     public int getSide() {

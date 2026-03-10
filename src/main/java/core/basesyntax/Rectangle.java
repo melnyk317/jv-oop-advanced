@@ -1,13 +1,18 @@
 package core.basesyntax;
 
-public class Rectangle extends Figure {
-    public int firstSide;
-    public int secondSide;
+public class Rectangle extends Figure implements Drawable {
+    private int firstSide;
+    private int secondSide;
     
-    public Rectangle(int firstSide, int secondSide, Color color, double area, String name) {
-        super(color, area, name);
+    public Rectangle(int firstSide, int secondSide, String color) {
+        super(color, firstSide * secondSide, "Rectangle");
         this.firstSide = firstSide;
         this.secondSide = secondSide;
+    }
+
+    public void draw() {
+        System.out.println("Figure: " + getName() + ", area: " + getArea() + " sq. units, first side: " + getFirstSide() 
+        + " units, second side"  + getSecondSide() + " units, color: " + getColor());
     }
 
     public int getFirstSide() {

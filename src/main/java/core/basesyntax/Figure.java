@@ -2,10 +2,10 @@ package core.basesyntax;
 
 public class Figure {
     private String name;
-    private Color color;
+    private String color;
     private double area;
 
-    public Figure(Color color, double area, String name) {
+    public Figure(String color, double area, String name) {
         this.color = color;
         this.area = area;
         this.name = name;

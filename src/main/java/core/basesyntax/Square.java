@@ -1,17 +1,17 @@
 package core.basesyntax;
 
-public class Square extends Figure /*implements Drawable*/ {
+public class Square extends Figure implements Drawable {
     private int side;
 
-    private Square(int side, Color color, double area, String name) {
-        super(color, area, name);
+    public Square(int side, String color) {
+        super(color, Math.pow(side, 2), "Square");
         this.side = side;
     }
 
-    /*private void draw() {
+    public void draw() {
         System.out.println("Figure: " + getName() + ", area: " + getArea() + " sq. units, side: " + getSide() 
         + " units, color: " + getColor());
-    }*/
+    }
 
     public int getSide() {
         return side;
@@ -19,7 +19,7 @@ public class Square extends Figure /*implements Drawable*/ {
 
     @Override
     public double getArea() {
-        return side * side;
+        return Math.pow(side, 2);
     }
 
     @Override
