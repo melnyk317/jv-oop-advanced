@@ -1,6 +1,6 @@
 package core.basesyntax;
 
-public class Figure {
+public class Figure implements Drawable {
     private String name;
     private String color;
     private double area;
@@ -9,6 +9,10 @@ public class Figure {
         this.color = color;
         this.area = area;
         this.name = name;
+    }
+
+    public void draw() {
+        System.out.println("Figure: " + getName() + ", area: " + getArea() + " sq. units, color: " + getColor());
     }
 
     public String getColor() {
