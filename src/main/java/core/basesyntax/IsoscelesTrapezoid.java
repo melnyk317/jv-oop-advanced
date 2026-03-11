@@ -6,7 +6,7 @@ public class IsoscelesTrapezoid extends Figure implements Drawable{
     private int side;
 
     public IsoscelesTrapezoid(int biggerBase, int smallerBase, int side, String color) {
-        super(color, (biggerBase + smallerBase)/4 * Math.sqrt(4 * Math.pow(side, 2) - Math.pow(biggerBase 
+        super(color, (biggerBase + smallerBase)/4.0 * Math.sqrt(4 * Math.pow(side, 2) - Math.pow(biggerBase 
             - smallerBase, 2)), "Isosceles trapezoid");
         this.biggerBase = biggerBase;
         this.smallerBase = smallerBase;

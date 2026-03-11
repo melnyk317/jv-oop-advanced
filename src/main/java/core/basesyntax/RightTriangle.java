@@ -1,25 +1,31 @@
 package core.basesyntax;
 
 public class RightTriangle extends Figure implements Drawable {
-    private int side;
+    private int legA;
+    private int legB;
 
-    public RightTriangle(int side, String color) {
-        super(color, (Math.sqrt(3) / 4) * Math.pow(side, 2), "Right triangle");
-        this.side = side;
+    public RightTriangle(int legA, int legB, String color) {
+        super(color, (legA * legB) / 2, "Right triangle");
+        this.legA = legA;
+        this.legB = legB;
     }
 
     public void draw() {
-        System.out.println("Figure: " + getName() + ", area: " + getArea() + " sq. units, side: " + getSide() 
-        + " units, color: " + getColor());
+        System.out.println("Figure: " + getName() + ", area: " + getArea() + " sq. units, leg A: " + getLegA() 
+        + " units, leg B: " + getLegB() + " color: " + getColor());
     }
 
-    public int getSide() {
-        return side;
+    public int getLegA() {
+        return legA;
+    }
+
+    public int getLegB() {
+        return legB;
     }
 
     @Override
     public double getArea() {
-        return (Math.sqrt(3) / 4) * Math.pow(side, 2);
+        return (legA * legB) / 2;
     }
 
     @Override

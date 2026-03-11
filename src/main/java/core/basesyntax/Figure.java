@@ -16,7 +16,7 @@ public class Figure implements Drawable {
     }
 
     public String getColor() {
-        return color.toString();
+        return color;
     }
 
     public double getArea() {

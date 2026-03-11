@@ -4,31 +4,40 @@ import java.util.Random;
 
 public class FigureSupplier {
     Random rd = new Random();
-    int maxSize = 20;
     private ColorSupplier colorSupplier = new ColorSupplier();
+    private static final int MAX_SIZE = 20;
+    private static final int DEFAULT_RADIUS = 10;
+    private static final String DEFAULT_COLOR = Color.WHITE.name();
+    private static final int FIGURE_COUNT = 5;
 
     public Figure getRandomFigure() {
-        int[] number = {1, 2, 3, 4, 5};
-        switch (number[rd.nextInt(number.length)]) {
+        int figureType = rd.nextInt(FIGURE_COUNT);
+        String randomColor = colorSupplier.getRandomColor();
+        int randomRadius = rd.nextInt(1, MAX_SIZE + 1);
+        switch (figureType) {
+    case 0:
+        return new Circle(randomRadius, colorSupplier.getRandomColor());
     case 1:
-        return new Circle(rd.nextInt(1, maxSize + 1), colorSupplier.getRandomColor());
+        int randomSides = rd.nextInt(1, MAX_SIZE + 1);
+        int randomSmallerBase = rd.nextInt(1, MAX_SIZE + 1);
+        int randomBiggerBase = rd.nextInt(randomSmallerBase + 1, MAX_SIZE + 1);
+        return new IsoscelesTrapezoid(randomBiggerBase, randomSmallerBase, randomSides, randomColor);
     case 2:
-        int smallerBase = rd.nextInt(1, maxSize + 1);
-        int biggerBase = rd.nextInt(smallerBase + 1, maxSize + 1);
-        return new IsoscelesTrapezoid(biggerBase, smallerBase, rd.nextInt(1, maxSize + 1), colorSupplier.getRandomColor());
+        int randomFirstSide = rd.nextInt(1, MAX_SIZE + 1);
+        int randomSecondSide = rd.nextInt(1, MAX_SIZE + 1);
+        return new Rectangle(randomFirstSide, randomSecondSide, randomColor);
     case 3:
-        return new Rectangle(rd.nextInt(1, maxSize + 1), rd.nextInt(1, maxSize + 1), colorSupplier.getRandomColor());
+        int randomLeg = rd.nextInt(1, MAX_SIZE + 1);
+        return new RightTriangle(randomLeg, randomLeg, randomColor);
     case 4:
-        return new RightTriangle(rd.nextInt(1, maxSize + 1), colorSupplier.getRandomColor());
-    case 5:
-        return new Square(rd.nextInt(1, maxSize + 1), colorSupplier.getRandomColor());
+        int randomSide = rd.nextInt(1, MAX_SIZE + 1);
+        return new Square(randomSide, randomColor);
     default:
-        return new Circle(rd.nextInt(1, maxSize + 1), colorSupplier.getRandomColor());
+        return new Circle(randomRadius, randomColor);
         }
-
     }
 
     public Figure getDefaultFigure() {
-        return new Circle(10, Color.WHITE.name());
+        return new Circle(DEFAULT_RADIUS, DEFAULT_COLOR);
     }
 }
