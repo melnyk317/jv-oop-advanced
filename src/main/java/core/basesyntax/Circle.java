@@ -1,6 +1,6 @@
 package core.basesyntax;
 
-public class Circle extends Figure implements Drawable {
+public class Circle extends Figure {
     private int radius;
 
     public Circle(int radius, String color) {
@@ -9,8 +9,8 @@ public class Circle extends Figure implements Drawable {
     }
 
     public void draw() {
-        System.out.println("Figure: " + getName() + ", area: " + getArea() + " sq. units, radius: " + getRadius() 
-        + " units, color: " + getColor());
+        System.out.println("Figure: " + getName() + ", area: " + getArea() 
+            + " sq. units, radius: " + getRadius() + " units, color: " + getColor());
     }
 
     public int getRadius() {

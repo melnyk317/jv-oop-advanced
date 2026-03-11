@@ -1,6 +1,6 @@
 package core.basesyntax;
 
-public class IsoscelesTrapezoid extends Figure implements Drawable{
+public class IsoscelesTrapezoid extends Figure {
     private int biggerBase;
     private int smallerBase;
     private int side;
@@ -14,8 +14,9 @@ public class IsoscelesTrapezoid extends Figure implements Drawable{
     }
 
     public void draw() {
-        System.out.println("Figure: " + getName() + ", area: " + getArea() + " sq. units, side: " + getSide() 
-        + " units, bigger base: " + getBiggerBase() + ", smaller base " + getSmallerBase() + ", color: " + getColor());
+        System.out.println("Figure: " + getName() + ", area: " + getArea() 
+            + " sq. units, side: " + getSide() + " units, bigger base: " 
+            + getBiggerBase() + ", smaller base " + getSmallerBase() + ", color: " + getColor());
     }
 
     public int getBiggerBase() {
@@ -32,7 +33,7 @@ public class IsoscelesTrapezoid extends Figure implements Drawable{
 
     @Override
     public double getArea() {
-        return (biggerBase + smallerBase)/4 * Math.sqrt(4 * Math.pow(side, 2) - Math.pow(biggerBase - smallerBase, 2));
+        return (biggerBase + smallerBase)/4.0 * Math.sqrt(4 * Math.pow(side, 2) - Math.pow(biggerBase - smallerBase, 2));
     }
 
     @Override

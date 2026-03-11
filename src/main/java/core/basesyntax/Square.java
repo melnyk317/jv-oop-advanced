@@ -1,6 +1,6 @@
 package core.basesyntax;
 
-public class Square extends Figure implements Drawable {
+public class Square extends Figure {
     private int side;
 
     public Square(int side, String color) {
@@ -9,8 +9,8 @@ public class Square extends Figure implements Drawable {
     }
 
     public void draw() {
-        System.out.println("Figure: " + getName() + ", area: " + getArea() + " sq. units, side: " + getSide() 
-        + " units, color: " + getColor());
+        System.out.println("Figure: " + getName() + ", area: " + getArea() 
+            + " sq. units, side: " + getSide() + " units, color: " + getColor());
     }
 
     public int getSide() {

@@ -12,7 +12,8 @@ public class Figure implements Drawable {
     }
 
     public void draw() {
-        System.out.println("Figure: " + getName() + ", area: " + getArea() + " sq. units, color: " + getColor());
+        System.out.println("Figure: " + getName() + ", area: " + getArea() 
+            + " sq. units, color: " + getColor());
     }
 
     public String getColor() {
