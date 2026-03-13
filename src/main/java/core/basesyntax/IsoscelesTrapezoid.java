@@ -15,7 +15,8 @@ public class IsoscelesTrapezoid extends Figure implements Drawable {
     public void draw() {
         System.out.println("Figure: " + getName() + ", area: " + getArea()
                 + " sq. units, side: " + getSide() + " units, bigger base: "
-                + getBiggerBase() + ", smaller base " + getSmallerBase() + ", color: " + getColor());
+                + getBiggerBase() + ", smaller base " + getSmallerBase() 
+                + ", color: " + getColor());
     }
 
     private static double calculateArea(int biggerBase, int smallerBase, int side) {
