@@ -1,11 +1,11 @@
 package core.basesyntax;
 
-public class IsoscelesTrapezoid extends Figure {
+public class IsoscelesTrapezoid extends Figure implements Drawable {
     private int biggerBase;
     private int smallerBase;
     private int side;
 
-    public IsoscelesTrapezoid(int biggerBase, int smallerBase, int side, String color) {
+    public IsoscelesTrapezoid(int biggerBase, int smallerBase, int side, Color color) {
         super(color, (biggerBase + smallerBase)/4.0 * Math.sqrt(4 * Math.pow(side, 2) - Math.pow(biggerBase 
             - smallerBase, 2)), "Isosceles trapezoid");
         this.biggerBase = biggerBase;

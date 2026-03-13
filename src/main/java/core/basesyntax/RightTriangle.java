@@ -1,10 +1,10 @@
 package core.basesyntax;
 
-public class RightTriangle extends Figure {
+public class RightTriangle extends Figure implements Drawable {
     private int legA;
     private int legB;
 
-    public RightTriangle(int legA, int legB, String color) {
+    public RightTriangle(int legA, int legB, Color color) {
         super(color, (legA * legB) / 2, "Right triangle");
         this.legA = legA;
         this.legB = legB;

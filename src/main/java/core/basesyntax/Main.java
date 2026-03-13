@@ -2,8 +2,8 @@ package core.basesyntax;
 
 public class Main {
     private static final int ARRAY_LENGTH = 6;
-    private static final int FIRST_HALF = 3;
-    private static final int SECOND_HALF = 3;
+    private static final int FIRST_HALF = ARRAY_LENGTH / 2;
+    private static final int SECOND_HALF = FIRST_HALF;
 
     public static void main(String[] args) {
         FigureSupplier figureSupplier = new FigureSupplier();

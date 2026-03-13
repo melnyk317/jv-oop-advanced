@@ -1,10 +1,10 @@
 package core.basesyntax;
 
-public class Rectangle extends Figure {
+public class Rectangle extends Figure implements Drawable {
     private int firstSide;
     private int secondSide;
     
-    public Rectangle(int firstSide, int secondSide, String color) {
+    public Rectangle(int firstSide, int secondSide, Color color) {
         super(color, firstSide * secondSide, "Rectangle");
         this.firstSide = firstSide;
         this.secondSide = secondSide;
