@@ -5,15 +5,19 @@ public class RightTriangle extends Figure implements Drawable {
     private int legB;
 
     public RightTriangle(int legA, int legB, Color color) {
-        super(color, (legA * legB) / 2, "Right triangle");
+        super(color, calculateArea(legA, legB), "Right triangle");
         this.legA = legA;
         this.legB = legB;
     }
 
     public void draw() {
-        System.out.println("Figure: " + getName() + ", area: " + getArea() 
-            + " sq. units, leg A: " + getLegA() + " units, leg B: " + getLegB() 
-            + " color: " + getColor());
+        System.out.println("Figure: " + getName() + ", area: " + getArea()
+                + " sq. units, leg A: " + getLegA() + " units, leg B: " + getLegB()
+                + " color: " + getColor());
+    }
+
+    private static double calculateArea(int legA, int legB) {
+        return (legA * legB) / 2;
     }
 
     public int getLegA() {
@@ -22,15 +26,5 @@ public class RightTriangle extends Figure implements Drawable {
 
     public int getLegB() {
         return legB;
-    }
-
-    @Override
-    public double getArea() {
-        return (legA * legB) / 2;
-    }
-
-    @Override
-    public String getName() {
-        return "Right triangle";
     }
 }

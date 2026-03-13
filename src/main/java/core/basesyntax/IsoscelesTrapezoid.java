@@ -6,17 +6,21 @@ public class IsoscelesTrapezoid extends Figure implements Drawable {
     private int side;
 
     public IsoscelesTrapezoid(int biggerBase, int smallerBase, int side, Color color) {
-        super(color, (biggerBase + smallerBase)/4.0 * Math.sqrt(4 * Math.pow(side, 2) - Math.pow(biggerBase 
-            - smallerBase, 2)), "Isosceles trapezoid");
+        super(color, calculateArea(smallerBase, biggerBase, side), "Isosceles trapezoid");
         this.biggerBase = biggerBase;
         this.smallerBase = smallerBase;
         this.side = side;
     }
 
     public void draw() {
-        System.out.println("Figure: " + getName() + ", area: " + getArea() 
-            + " sq. units, side: " + getSide() + " units, bigger base: " 
-            + getBiggerBase() + ", smaller base " + getSmallerBase() + ", color: " + getColor());
+        System.out.println("Figure: " + getName() + ", area: " + getArea()
+                + " sq. units, side: " + getSide() + " units, bigger base: "
+                + getBiggerBase() + ", smaller base " + getSmallerBase() + ", color: " + getColor());
+    }
+
+    private static double calculateArea(int biggerBase, int smallerBase, int side) {
+        return (biggerBase + smallerBase) / 4.0 * Math.sqrt(4 * Math.pow(side, 2)
+                - Math.pow(biggerBase - smallerBase, 2));
     }
 
     public int getBiggerBase() {
@@ -29,15 +33,5 @@ public class IsoscelesTrapezoid extends Figure implements Drawable {
 
     public int getSide() {
         return side;
-    }
-
-    @Override
-    public double getArea() {
-        return (biggerBase + smallerBase)/4.0 * Math.sqrt(4 * Math.pow(side, 2) - Math.pow(biggerBase - smallerBase, 2));
-    }
-
-    @Override
-    public String getName() {
-        return "Isosceles trapezoid";
     }
 }
